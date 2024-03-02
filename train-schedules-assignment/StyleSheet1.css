@@ -1,0 +1,91 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+.btn-submit {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    .btn-submit:hover {
+        background-color: #218838;
+    }
+
+.result-message {
+    padding: 10px;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: none; /* Hide initially, use server-side or client-side script to display it when needed */
+}
+
+/* Handling validation error styles */
+.aspNetHidden {
+    display: none;
+}
+
+.error {
+    color: #dc3545;
+}
+
+/* Customizing the dropdown list */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Styling required field validator */
+span[style='color:Red;'] {
+    color: #dc3545;
+    font-weight: bold;
+}

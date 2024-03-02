@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace train_schedules_assignment
 {
-    public partial class Contact : Page
+    public partial class ViewSchedule : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Your code for Page_Load
         }
     }
 }

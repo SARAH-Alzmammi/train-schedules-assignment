@@ -11,16 +11,25 @@ namespace train_schedules_assignment
 {
 
 
-    public partial class SiteMaster
+    public partial class ViewSchedule
     {
 
         /// <summary>
-        /// MainContent control.
+        /// GridViewTrainSchedules control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView GridViewTrainSchedules;
+
+        /// <summary>
+        /// SqlDataSourceTrainSchedules control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceTrainSchedules;
     }
 }

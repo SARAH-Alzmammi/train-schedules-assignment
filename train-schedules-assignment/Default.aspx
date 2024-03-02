@@ -1,44 +1,19 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="train_schedules_assignment._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="train_schedules_assignment.Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
-
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
-        </div>
-    </main>
-
+    <h2>Booked Tickets</h2>
+    <asp:GridView ID="GridViewBookedTickets" runat="server" AutoGenerateColumns="False" CssClass="table" DataSourceID="SqlDataSourceBookedTickets">
+        <Columns>
+            <asp:BoundField DataField="BookingID" HeaderText="Booking ID" />
+            <asp:BoundField DataField="TrainName" HeaderText="Train Name" />
+            <asp:BoundField DataField="DepartureStation" HeaderText="Departure Station" />
+            <asp:BoundField DataField="ArrivalStation" HeaderText="Arrival Station" />
+            <asp:BoundField DataField="DepartureTime" HeaderText="Departure Time" />
+            <asp:BoundField DataField="ArrivalTime" HeaderText="Arrival Time" />
+            <asp:BoundField DataField="BookingDateTime" HeaderText="Booking Date" DataFormatString="{0:d}" />
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSourceBookedTickets" runat="server" ConnectionString="<%$ ConnectionStrings:TrainSchedulesDb %>"
+        SelectCommand="SELECT b.BookingID, t.TrainName, t.DepartureStation, t.ArrivalStation, t.DepartureTime, t.ArrivalTime, b.BookingDateTime FROM Booking b INNER JOIN Trains t ON b.TrainID = t.TrainID ORDER BY b.BookingDateTime DESC">
+    </asp:SqlDataSource>
 </asp:Content>
